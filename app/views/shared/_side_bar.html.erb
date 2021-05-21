@@ -1,0 +1,29 @@
+<div class="side-bar-header">
+  <div class="header-name">
+    <% if user_signed_in? %>
+      <%= link_to current_user.user_name, "#" %>
+      <span>/</span>
+      <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+    <% else %>
+      <%= link_to "ログイン", new_user_session_path %>
+      <span>/</span>
+      <%= link_to "新規登録", new_user_registration_path %>
+    <% end %>
+  </div>
+</div>
+
+<div class="rooms">
+  <div class="create-room">
+    <a href="#">チャットを作成する</a>
+  </div>
+  <div class="room">
+    <div class="room-name">
+      <a href="#">techroom1</a>
+    </div>
+  </div>
+  <div class="room">
+    <div class="room-name">
+      <a href="#">techroom2</a>
+    </div>
+  </div>
+</div>
