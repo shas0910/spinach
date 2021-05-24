@@ -1,0 +1,26 @@
+<div class="message">
+  <div class="upper-message">
+    <div class="message-user">
+      <%= content.user.user_name %>さんより
+      <%= content.content_title %>についての
+      <% case content.content_type %>
+      <% when "report" then %>
+      報告があります
+      <% when "communicate" then %>
+      連絡があります
+      <% when "consult" then %>
+      相談があります
+      <% end %>
+    </div>
+    <div class="message-date">
+      <!-- 投稿した時刻を出力する -->
+      <%= l content.created_at %>
+    </div>
+  </div>
+  <div class="lower-message">
+    <div class="message-content">
+      <!-- 投稿したメッセージ内容を記述する -->
+      <%= content.content_text %>
+    </div>
+  </div>
+</div>
