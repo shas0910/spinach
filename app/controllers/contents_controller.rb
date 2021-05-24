@@ -2,6 +2,7 @@ class ContentsController < ApplicationController
   def index
     @room = Room.find(params[:room_id])
     @content = Content.new
+    @contents = @room.contents.includes(:user)
   end
 
   def create
@@ -10,6 +11,7 @@ class ContentsController < ApplicationController
     if @content.save
       redirect_to room_contents_path(@room)
     else
+      @contents = @room.contents.includes(:user)
       render :index
     end
   end
