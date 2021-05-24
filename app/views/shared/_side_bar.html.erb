@@ -17,13 +17,12 @@
     <%= link_to "ルーム作成", new_room_path %>
   </div>
   <div class="room">
-    <div class="room-name">
-      <a href="#">techroom1</a>
-    </div>
-  </div>
-  <div class="room">
-    <div class="room-name">
-      <a href="#">techroom2</a>
-    </div>
+    <% current_user.rooms.each do |room| %>
+      <div class="room">
+        <div class="room-name">
+          <a href="#"><%= room.room_name %></a>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>
