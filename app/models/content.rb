@@ -4,5 +4,5 @@ class Content < ApplicationRecord
 
   validates :content_type, presence: true
   validates :content_title, presence: true
-  balidates :content_text, presence: true
+  validates :content_text, presence: true
 end

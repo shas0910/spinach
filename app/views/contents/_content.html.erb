@@ -1,8 +1,16 @@
 <div class="message">
   <div class="upper-message">
     <div class="message-user">
-      <!-- 投稿したユーザー名情報を出力する -->
-      <%= content.user.user_name %>
+      <%= content.user.user_name %>さんより
+      <%= content.content_title %>についての
+      <% case content.content_type %>
+      <% when "report" then %>
+      報告があります
+      <% when "communicate" then %>
+      連絡があります
+      <% when "consult" then %>
+      相談があります
+      <% end %>
     </div>
     <div class="message-date">
       <!-- 投稿した時刻を出力する -->
