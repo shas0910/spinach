@@ -57,7 +57,7 @@
 - belongs_to :content
 
 
-## content テーブル
+## contents テーブル
 
 | Column        | Type       | Options                        |
 | ------------- | ---------- | ------------------------------ |

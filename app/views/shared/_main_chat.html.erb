@@ -45,13 +45,19 @@
   </div>
 </div>
 
-<div class="form">
+<%= form_with model: [@room, @content], class: 'form', local: true do |f| %>
+  <div class="radio-buttons">
+    <label><%= f.radio_button :content_type, "report" %>報告</label>
+    <label><%= f.radio_button :content_type, "communicate" %>連絡</label>
+    <label><%= f.radio_button :content_type, "consult" %>相談</label>
+  </div>
   <div class="form-input">
-    <input class="form-message" placeholder= "type a message">
+    <%= f.text_field :content_title %>
+    <%= f.text_field :content_text, class: 'form-message', placeholder: 'type a message' %>
     <label class="form-image">
       <span class="image-file">画像</span>
-      <input type="file" class="hidden">
+      <%# <%= f.file_field :image, class: 'hidden' %> %>
     </label>
   </div>
-  <input class="form-submit" type="submit" value="送信">
-</div>
+  <%= f.submit '送信', class: 'form-submit' %>
+<% end %>
