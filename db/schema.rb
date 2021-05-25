@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_24_055512) do
+ActiveRecord::Schema.define(version: 2021_05_24_101125) do
 
   create_table "contents", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "content_type", null: false
@@ -22,6 +22,15 @@ ActiveRecord::Schema.define(version: 2021_05_24_055512) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["room_id"], name: "index_contents_on_room_id"
     t.index ["user_id"], name: "index_contents_on_user_id"
+  end
+
+  create_table "reads", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "content_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["content_id"], name: "index_reads_on_content_id"
+    t.index ["user_id"], name: "index_reads_on_user_id"
   end
 
   create_table "room_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -56,6 +65,8 @@ ActiveRecord::Schema.define(version: 2021_05_24_055512) do
 
   add_foreign_key "contents", "rooms"
   add_foreign_key "contents", "users"
+  add_foreign_key "reads", "contents"
+  add_foreign_key "reads", "users"
   add_foreign_key "room_users", "rooms"
   add_foreign_key "room_users", "users"
 end
