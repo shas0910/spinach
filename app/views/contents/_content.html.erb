@@ -23,4 +23,12 @@
       <%= content.content_text %>
     </div>
   </div>
+  <div class="reads">
+    <% if current_user.read_by?(content.id) %>
+      <%= link_to '未読にする', room_content_read_path(content.room_id, content.id, content), method: :DELETE %>
+    <% else %>
+      <%= link_to '既読', room_content_reads_path(content.room_id, content.id), method: :POST %>
+    <% end %>
+    <%= content.reads.count %>
+  </div>
 </div>

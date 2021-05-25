@@ -4,10 +4,15 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  validates :user_name, presence: true
-  validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i, message: 'Include both letters and numbers', allow_blank: true }
-
   has_many :room_users
   has_many :rooms, through: :room_users
   has_many :contents
+  has_many :reads
+
+  validates :user_name, presence: true
+  validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i, message: 'Include both letters and numbers', allow_blank: true }
+
+  def read_by?(content_id)
+    reads.where(content_id: content_id).exists?
+  end
 end
