@@ -72,6 +72,7 @@
 - belongs_to :user
 - belongs_to :room
 - has_many :reads
+- has_many :comments
 
 
 ## comments テーブル

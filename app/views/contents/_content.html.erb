@@ -30,5 +30,24 @@
       <%= link_to '既読', room_content_reads_path(content.room_id, content.id), method: :POST %>
     <% end %>
     <%= content.reads.count %>
+    /
+    <%= content.room.user_ids.count %>
+  </div>
+</div>
+<div class="comment-wrapper">
+  <div class="comments">
+    <% content.comments.each do |c| %>
+      <div class="comment">
+        <%= c.comment_text %>
+        <%= c.user.user_name %>
+        <%= l c.created_at %>
+      </div>
+    <% end %>
+  </div>
+  <div class="comment-form">
+    <%= form_with model: @comment, url: room_content_comments_path(params[:room_id], content.id), local: true do |f| %>
+    <%= f.text_field :comment_text, placeholder: "コメント" %>
+    <%= f.submit "SEND" %>
+    <% end %>
   </div>
 </div>
