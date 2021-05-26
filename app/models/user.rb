@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :rooms, through: :room_users
   has_many :contents
   has_many :reads
+  has_many :comments
 
   validates :user_name, presence: true
   validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i, message: 'Include both letters and numbers', allow_blank: true }

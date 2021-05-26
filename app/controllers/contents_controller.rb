@@ -3,6 +3,7 @@ class ContentsController < ApplicationController
     @room = Room.find(params[:room_id])
     @content = Content.new
     @contents = @room.contents.includes(:user)
+    @comment = Comment.new
   end
 
   def create
