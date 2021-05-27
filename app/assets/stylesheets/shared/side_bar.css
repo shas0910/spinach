@@ -1,38 +1,103 @@
 .side-bar-header {
-  height: 100px;
+  height: 70px;
   padding: 0 20px;
-  background-color: #00ff80;
+  background-color: #FFF;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-bottom: solid 1px rgb(200, 200, 200);
+  border-right: solid 1px rgb(200, 200, 200);
 }
 
-.header-name * {
+.header-user {
+  display: flex;
+}
+
+.header-user-name {
   font-size: 16px;
-  color: #FAFAFA;
+  color: #5e6369;
   text-decoration: none;
+  text-align: left;
+  align-self: center;
+  margin-left: 5px;
 }
 
-.create-room a {
-  font-size: 10px;
-  border: 1px solid lightblue;
-  padding: 14px;
-  color: deepskyblue;
+.log-out-link {
   text-decoration: none;
+  color: #5e6369;
+  font-size: 14px;
 }
 
-.rooms {
-  background-color: #ccffe5;
-  height: calc(100vh - 100px);
+.log-in-link {
+  text-decoration: none;
+  color: #5e6369;
+  font-size: 14px;
+}
+
+.sign-in-link {
+  text-decoration: none;
+  color: #5e6369;
+  font-size: 14px;
+}
+
+.side-bar-main {
+  border-right: solid 1px rgb(200, 200, 200);
+  background-color: #FFF;
+  height: calc(100vh - 70px);
   padding: 0 20px;
   overflow: scroll;
+  overflow: hidden visible;
+  position: relative;
 }
 
 .room {
-  padding: 20px 0 40px;
+  display: flex;
+  padding: 20px 0 20px;
+}
+
+.selected {
+  background-color: #c1f0d8;
+  margin: 0 -20px;
+  padding: 20px;
+}
+
+.room-icon {
+  color: #5e6369;
+  padding-right: 5px;
 }
 
 .room-name a {
   text-decoration: none;
-  color: white;
+  color: #5e6369;
+}
+
+.create-room {
+  display: flex;
+  padding: 20px 0 20px;
+}
+
+.create-room a {
+  text-decoration: none;
+  color: #5e6369;
+}
+
+.selected-about {
+  position: absolute;
+  bottom: 0;
+  padding: 20px;
+  width: 250px;
+  background-color: #c1f0d8;
+  margin: 0 -20px;
+}
+
+.about {
+  position: absolute;
+  bottom: 0;
+  padding: 20px 0;
+  width: 250px;
+}
+
+.about a {
+  text-decoration: none;
+  color: #5e6369;
 }

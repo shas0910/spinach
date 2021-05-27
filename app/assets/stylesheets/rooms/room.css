@@ -3,12 +3,12 @@
 }
 .side-bar {
   background-color: springgreen;
-  width: 300px;
+  width: 250px;
   height: 100vh;
 }
 .chat {
-  background-color: #FFFFFF;
-  width: calc(100vw - 300px);
+  background-color: #eeeded;
+  width: calc(100vw - 250px);
 }
 
 h1 {
@@ -109,7 +109,6 @@ li {
   float: left;
 }
 .chat-room-user__btn {
-  float: right;
   display: inline-block;
   cursor: pointer;
 }

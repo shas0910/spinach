@@ -1,0 +1,156 @@
+.content {
+  display: flex;
+  margin: 10px;
+}
+
+.user-avatar {
+  font-size: 30px;
+}
+
+.report {
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 10px;
+  background-color: #d6ffd6;
+  flex-grow: 1;
+}
+
+.communicate {
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 10px;
+  background-color: #ffffd6;
+  flex-grow: 1;
+}
+
+.consult {
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 10px;
+  background-color: #ffd6ff;
+  flex-grow: 1;
+}
+
+
+.upper-message{
+  display: flex;
+}
+
+.message-user {
+  color: #434a54;
+  font-size: 16px;
+}
+
+.message-content {
+  color: #434a54;
+  font-size: 14px;
+}
+
+.lower-message {
+  margin-top: 10px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.message-date {
+  color: #999;
+  font-size: 12px;
+  margin-right: auto;
+}
+
+.reads {
+  display: flex;
+  align-items: center;
+}
+
+.un-read-link {
+  color: rgb(0, 255, 85);
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.read-link {
+  color: lightgray;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.reads-count {
+  font-size: 12px;
+  color: #434a54;
+  margin-left: 3px;
+}
+
+.comment-btn-group {
+  display: flex;
+  margin-left: 15px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.comment-btn {
+  font-size: 18px;
+  color: lightgray;
+}
+
+.comments-count {
+  font-size: 12px;
+  color: #434a54;
+  margin-left: 3px;
+}
+
+.comment-wrapper {
+  display: none;
+}
+
+.comment {
+  display: flex;
+  justify-content: flex-end;
+  margin: 10px;
+}
+
+.comment-left {
+  margin-right: 5px;
+}
+
+.comment-user {
+  font-size: 12px;
+  text-align: right;
+}
+
+.comment-bottom {
+  display: flex;
+}
+
+.comment-time {
+  font-size: 10px;
+  align-self: flex-end;
+  margin-right: 5px;
+}
+
+.comment-text {
+  font-size: 14px;
+  background: #FFF;
+  padding: 10px 20px;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.comment-form-group {
+  margin-right: 20px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.comment-form {
+  border: none;
+  height: 25px;
+  width: 300px;
+}
+
+.comment-submit {
+  background-color: lightslategray;
+  height: 100%;
+  color: white;
+}

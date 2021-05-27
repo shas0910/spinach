@@ -1,28 +1,67 @@
 <div class="side-bar-header">
-  <div class="header-name">
-    <% if user_signed_in? %>
-      <%= link_to current_user.user_name, "#" %>
-      <span>/</span>
-      <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-    <% else %>
-      <%= link_to "ログイン", new_user_session_path %>
-      <span>/</span>
-      <%= link_to "新規登録", new_user_registration_path %>
-    <% end %>
-  </div>
+  <% if user_signed_in? %>
+    <div class="header-user">
+      <div class="user-avatar">
+        <i class="fas fa-user"></i>
+      </div>
+      <%= link_to current_user.user_name, "#", class: "header-user-name" %>
+    </div>
+    <%= link_to "ログアウト", destroy_user_session_path, class: "log-out-link", method: :delete %>
+  <% else %>
+    <%= link_to "ログイン", new_user_session_path, class: "log-in-link" %>
+    <span>/</span>
+    <%= link_to "新規登録", new_user_registration_path, class: "sign-in-link" %>
+  <% end %>
 </div>
 
-<div class="rooms">
-  <div class="create-room">
-    <%= link_to "ルーム作成", new_room_path %>
-  </div>
-  <div class="room">
+<div class="side-bar-main">
+
+  <% if user_signed_in? %>
     <% current_user.rooms.each do |room| %>
-      <div class="room">
-        <div class="room-name">
-          <%= link_to room.room_name, room_contents_path(room) %>
+      <% if room.id == @room.id %>
+        <div class="selected room">
+          <div class="room-name">
+            <%= link_to room_contents_path(room) do %>
+              <i class="fas fa-door-open"></i>
+              <%= room.room_name %>
+            <% end %>
+          </div>
         </div>
-      </div>
+      <% else %>
+        <div class="room">
+          <div class="room-name">
+            <%= link_to room_contents_path(room) do %>
+              <i class="fas fa-door-closed"></i>
+              <%= room.room_name %>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
     <% end %>
-  </div>
+    <div class="create-room">
+      <%= link_to new_room_path do %>
+        <i class="fas fa-plus"></i>
+        <span>新しく部屋を作成する</span>
+      <% end %>
+    </div>
+  <% end %>
+
+  <% if current_page?(root_path) %>
+    <div class="selected-about">
+      <div class="room-name">
+        <%= link_to root_path  do %>
+          <i class="far fa-question-circle"></i>
+          <span>about Spinach</span>
+        <% end %>
+      </div>
+    </div>
+  <% else %>
+    <div class="about">
+      <%= link_to root_path  do %>
+          <i class="far fa-question-circle"></i>
+          <span>about Spinach</span>
+        <% end %>
+    </div>
+  <% end %>
+
 </div>
