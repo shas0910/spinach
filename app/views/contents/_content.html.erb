@@ -1,53 +1,98 @@
-<div class="message">
-  <div class="upper-message">
-    <div class="message-user">
-      <%= content.user.user_name %>さんより
-      <%= content.content_title %>についての
-      <% case content.content_type %>
-      <% when "report" then %>
-      報告があります
-      <% when "communicate" then %>
-      連絡があります
-      <% when "consult" then %>
-      相談があります
-      <% end %>
-    </div>
-    <div class="message-date">
-      <!-- 投稿した時刻を出力する -->
-      <%= l content.created_at %>
-    </div>
-  </div>
-  <div class="lower-message">
-    <div class="message-content">
-      <!-- 投稿したメッセージ内容を記述する -->
-      <%= content.content_text %>
-    </div>
-  </div>
-  <div class="reads">
-    <% if current_user.read_by?(content.id) %>
-      <%= link_to '未読にする', room_content_read_path(content.room_id, content.id, content), method: :DELETE %>
-    <% else %>
-      <%= link_to '既読', room_content_reads_path(content.room_id, content.id), method: :POST %>
-    <% end %>
-    <%= content.reads.count %>
-    /
-    <%= content.room.user_ids.count %>
-  </div>
+<div class="content">
+<div class="user-avatar">
+  <i class="fas fa-user"></i>
 </div>
-<div class="comment-wrapper">
-  <div class="comments">
-    <% content.comments.each do |c| %>
-      <div class="comment">
-        <%= c.comment_text %>
-        <%= c.user.user_name %>
-        <%= l c.created_at %>
+<% case content.content_type %>
+<% when "report" then %>
+  <div class="report">
+<% when "communicate" then %>
+  <div class="communicate">
+<% when "consult" then %>
+  <div class="consult">
+<% end %>
+    <div class="upper-message">
+      <div class="message-user">
+        <%= content.user.user_name %>さんより
+        <%= content.content_title %>についての
+        <% case content.content_type %>
+        <% when "report" then %>
+        報告があります
+        <% when "communicate" then %>
+        連絡があります
+        <% when "consult" then %>
+        相談があります
+        <% end %>
       </div>
-    <% end %>
-  </div>
-  <div class="comment-form">
-    <%= form_with model: @comment, url: room_content_comments_path(params[:room_id], content.id), local: true do |f| %>
-    <%= f.text_field :comment_text, placeholder: "コメント" %>
-    <%= f.submit "SEND" %>
-    <% end %>
+    </div>
+
+      <div class="message-content">
+        <%= safe_join(content.content_text.split("\n"),tag(:br)) %>
+      </div>
+
+    <div class="lower-message">
+      <div class="message-date">
+          <%= l content.created_at %>
+      </div>
+      <div class="reads">
+        <% if current_user.read_by?(content.id) %>
+          <%= link_to room_content_read_path(content.room_id, content.id, content), class: "un-read-link", method: :DELETE do %>
+            <i class="fas fa-check-square"></i>
+          <% end %>
+        <% else %>
+          <%= link_to room_content_reads_path(content.room_id, content.id), class: "read-link", method: :POST do %>
+            <i class="far fa-check-square"></i>
+          <% end %>
+        <% end %>
+        <span class="reads-count">
+          <%= content.reads.count %>
+          /
+          <%= content.room.user_ids.count %>
+        </span>
+      </div>
+      <div class="comment-btn-group">
+        <div class="comment-btn">
+          <i class="fas fa-comment-dots"></i>
+        </div>
+        <div class="comments-count">
+          <%= content.comments.count %>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
+
+    <div class="comment-wrapper">
+      <div class="comments">
+        <% content.comments.each do |c| %>
+          <div class="comment">
+            <div class="comment-left">
+              <div class="comment-user">
+                <%= c.user.user_name %>
+              </div>
+              <div class="comment-bottom">
+                <p class="comment-time">
+                  <span><%= l c.created_at %></span>
+                </p>
+                <div class="comment-text">
+                  <%= c.comment_text %>
+                </div>
+              </div>
+            </div>
+            <div class="comment-right">
+              <div class="user-avatar">
+                <i class="fas fa-user"></i>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+
+      <div class="comment-form-group">
+        <%= form_with model: @comment, url: room_content_comments_path(params[:room_id], content.id), local: true do |f| %>
+          <%= f.text_field :comment_text, class: "comment-form" %>
+          <%= f.button :type => "submit", style: 'border-style: none;', class: "comment-submit" do %>
+            <i class="fas fa-comment-dots"></i>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
