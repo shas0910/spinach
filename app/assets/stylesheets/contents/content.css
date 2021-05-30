@@ -107,7 +107,7 @@
 .comment {
   display: flex;
   justify-content: flex-end;
-  margin: 10px;
+  margin: 0 10px 10px 10px;
 }
 
 .comment-left {
@@ -151,6 +151,6 @@
 
 .comment-submit {
   background-color: lightslategray;
-  height: 100%;
+  height: 25px;
   color: white;
 }

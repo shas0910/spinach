@@ -15,7 +15,6 @@
 </div>
 
 <div class="side-bar-main">
-
   <% if user_signed_in? %>
     <% current_user.rooms.each do |room| %>
       <% if room.id == @room.id %>
@@ -45,23 +44,32 @@
       <% end %>
     </div>
   <% end %>
+</div>
 
+<div class="side-bar-footer">
+  <div class="logo-selected">
+    <%= image_tag "spinach-logo.png", class: "spinach-logo-image" %>
+    <h1 class="spinach-logo-character">Spinach</h1>
+  </div>
   <% if current_page?(root_path) %>
-    <div class="selected-about">
-      <div class="room-name">
-        <%= link_to root_path  do %>
-          <i class="far fa-question-circle"></i>
-          <span>about Spinach</span>
-        <% end %>
-      </div>
-    </div>
+    <%= link_to root_path, class: "selected-about-link" do %>
+      <i class="far fa-question-circle"></i>
+      <span>about Spinach</span>
+    <% end %>
+    <p></p>
+    <%= link_to publics_contact_path, class: "contact-link"  do %>
+      <i class="far fa-envelope"></i>
+      <span>contact</span>
+    <% end %>
   <% else %>
-    <div class="about">
-      <%= link_to root_path  do %>
-          <i class="far fa-question-circle"></i>
-          <span>about Spinach</span>
-        <% end %>
-    </div>
+      <%= link_to root_path, class: "about-link" do %>
+      <i class="far fa-question-circle"></i>
+      <span>about Spinach</span>
+    <% end %>
+    <p></p>
+    <%= link_to publics_contact_path, class: "selected-contact-link"  do %>
+      <i class="far fa-envelope"></i>
+      <span>contact</span>
+    <% end %>
   <% end %>
-
 </div>

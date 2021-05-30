@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   get "publics/about" => "publics#about"
+  get "publics/contact" => "publics#contact"
   root to: "publics#about"
   resources :rooms, only: [:index, :new, :create, :destroy] do
     resources :contents, only: [:index, :create] do
