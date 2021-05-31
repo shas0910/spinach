@@ -3,4 +3,7 @@ class PublicsController < ApplicationController
     @room = Room.new
   end
 
+  def contact
+    @room = Room.new
+  end
 end

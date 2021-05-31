@@ -86,13 +86,10 @@
           </div>
         <% end %>
       </div>
-
-      <div class="comment-form-group">
-        <%= form_with model: @comment, url: room_content_comments_path(params[:room_id], content.id), local: true do |f| %>
-          <%= f.text_field :comment_text, class: "comment-form" %>
-          <%= f.button :type => "submit", style: 'border-style: none;', class: "comment-submit" do %>
-            <i class="fas fa-comment-dots"></i>
-          <% end %>
+      <%= form_with model: @comment, url: room_content_comments_path(params[:room_id], content.id), local: true, class: "comment-form-group" do |f| %>
+        <%= f.text_field :comment_text, class: "comment-form" %>
+        <%= f.button :type => "submit", style: 'border-style: none;', class: "comment-submit" do %>
+          <i class="fas fa-comment-dots"></i>
         <% end %>
-      </div>
+      <% end %>
     </div>
