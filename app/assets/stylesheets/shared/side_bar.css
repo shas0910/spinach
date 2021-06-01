@@ -26,18 +26,37 @@
   text-decoration: none;
   color: #5e6369;
   font-size: 14px;
+  display: block;
+}
+
+.session-links {
+  height: 70px;
+  display: flex;
+  border-bottom: solid 1px rgb(200, 200, 200);
+  border-right: solid 1px rgb(200, 200, 200);
 }
 
 .log-in-link {
   text-decoration: none;
   color: #5e6369;
   font-size: 14px;
+  display: block;
+  height: 100%;
+  width: 50%;
+  padding-top: 25px;
+  text-align: center;
 }
 
-.sign-in-link {
+.sign-up-link {
   text-decoration: none;
   color: #5e6369;
   font-size: 14px;
+  display: block;
+  height: 100%;
+  width: 50%;
+  padding-top: 25px;
+  text-align: center;
+  border-left: 1px solid rgb(200, 200, 200);
 }
 
 .side-bar-main {
@@ -51,8 +70,12 @@
 }
 
 .room {
+<<<<<<< Updated upstream
   display: flex;
   padding: 20px 0 20px;
+=======
+  margin: 0 -20px;
+>>>>>>> Stashed changes
 }
 
 .selected {
@@ -69,16 +92,16 @@
 .room-name a {
   text-decoration: none;
   color: #5e6369;
-}
-
-.create-room {
-  display: flex;
-  padding: 20px 0 20px;
+  padding: 20px;
+  display: block;
 }
 
 .create-room a {
   text-decoration: none;
   color: #5e6369;
+  padding: 20px;
+  display: block;
+  margin: 0 -20px;
 }
 
 .about {
@@ -104,6 +127,11 @@
 .logo-selected {
   display: flex;
   align-items: center;
+<<<<<<< Updated upstream
+=======
+  margin-left: -2px;
+  margin-bottom: 6px;
+>>>>>>> Stashed changes
 }
 
 .spinach-logo-image {
@@ -115,8 +143,10 @@
   padding-left: 10px;
   border-top: solid 2px mediumseagreen;
   border-bottom: solid 2px mediumseagreen;
+  font-weight: bold;
 }
 
+<<<<<<< Updated upstream
 .selected-about-link {
   width: 250px;
   background-color: #c1f0d8;
@@ -133,6 +163,9 @@
   color: #5e6369;
   display: inline-block;
   padding: 0 20px;
+=======
+.footer-link {
+>>>>>>> Stashed changes
   margin: 0 -20px;
   text-decoration: none;
 }
@@ -155,4 +188,10 @@
   padding: 0 20px;
   margin: 0 -20px;
   text-decoration: none;
+<<<<<<< Updated upstream
+=======
+  font-size: 14px;
+  display: block;
+  padding: 5px 20px;
+>>>>>>> Stashed changes
 }
