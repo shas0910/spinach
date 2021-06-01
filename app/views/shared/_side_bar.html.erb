@@ -1,18 +1,19 @@
-<div class="side-bar-header">
-  <% if user_signed_in? %>
+<% if user_signed_in? %>
+  <div class="side-bar-header">
     <div class="header-user">
       <div class="user-avatar">
         <i class="fas fa-user"></i>
       </div>
       <%= link_to current_user.user_name, "#", class: "header-user-name" %>
     </div>
-    <%= link_to "ログアウト", destroy_user_session_path, class: "log-out-link", method: :delete %>
-  <% else %>
+  </div>
+<% else %>
+  <div class="session-links">
     <%= link_to "ログイン", new_user_session_path, class: "log-in-link" %>
-    <span>/</span>
-    <%= link_to "新規登録", new_user_registration_path, class: "sign-in-link" %>
-  <% end %>
-</div>
+    <%= link_to "新規登録", new_user_registration_path, class: "sign-up-link" %>
+  </div>
+<% end %>
+
 
 <div class="side-bar-main">
   <% if user_signed_in? %>

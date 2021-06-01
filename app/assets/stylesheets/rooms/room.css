@@ -2,7 +2,6 @@
   display: flex;
 }
 .side-bar {
-  background-color: springgreen;
   width: 250px;
   height: 100vh;
 }
