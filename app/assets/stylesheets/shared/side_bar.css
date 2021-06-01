@@ -52,18 +52,12 @@
 
 .room {
   display: flex;
-  padding: 20px 0 20px;
-}
-
-.selected {
-  background-color: #c1f0d8;
   margin: 0 -20px;
   padding: 20px;
 }
 
-.room-icon {
-  color: #5e6369;
-  padding-right: 5px;
+.selected {
+  background-color: #c1f0d8;
 }
 
 .room-name a {
@@ -101,9 +95,10 @@
   border-top: solid 1px rgb(200, 200, 200);
 }
 
-.logo-selected {
+.logo {
   display: flex;
   align-items: center;
+  margin-bottom: 5px;
 }
 
 .spinach-logo-image {
@@ -117,42 +112,13 @@
   border-bottom: solid 2px mediumseagreen;
 }
 
-.selected-about-link {
-  width: 250px;
-  background-color: #c1f0d8;
-  color: #5e6369;
-  display: inline-block;
-  padding: 0 20px;
-  margin: 13px -20px 0 -20px;
-  text-decoration: none;
-}
-
-.contact-link {
-  width: 250px;
-  background-color: #FFF;
-  color: #5e6369;
-  display: inline-block;
-  padding: 0 20px;
+.footer-link {
+  padding: 4px 20px;
   margin: 0 -20px;
-  text-decoration: none;
 }
 
-.about-link {
-  width: 250px;
-  background-color: #FFF;
+.footer-link a {
   color: #5e6369;
-  display: inline-block;
-  padding: 0 20px;
-  margin: 13px -20px 0 -20px;
   text-decoration: none;
-}
-
-.selected-contact-link {
-  width: 250px;
-  background-color: #c1f0d8;
-  color: #5e6369;
-  display: inline-block;
-  padding: 0 20px;
-  margin: 0 -20px;
-  text-decoration: none;
+  font-size: 14px;
 }

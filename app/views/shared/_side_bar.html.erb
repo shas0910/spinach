@@ -47,29 +47,48 @@
 </div>
 
 <div class="side-bar-footer">
-  <div class="logo-selected">
+  <div class="logo">
     <%= image_tag "spinach-logo.png", class: "spinach-logo-image" %>
     <h1 class="spinach-logo-character">Spinach</h1>
   </div>
   <% if current_page?(root_path) %>
-    <%= link_to root_path, class: "selected-about-link" do %>
-      <i class="far fa-question-circle"></i>
-      <span>about Spinach</span>
-    <% end %>
-    <p></p>
-    <%= link_to publics_contact_path, class: "contact-link"  do %>
+    <div class="selected footer-link">
+      <%= link_to root_path do %>
+        <i class="far fa-question-circle"></i>
+        <span>about Spinach</span>
+      <% end %>
+    </div>
+    <div class="footer-link">
+     <%= link_to publics_contact_path do %>
       <i class="far fa-envelope"></i>
       <span>contact</span>
-    <% end %>
+     <% end %>
+    </div>
+  <% elsif current_page?(publics_contact_path) %>
+    <div class="footer-link">
+      <%= link_to root_path do %>
+        <i class="far fa-question-circle"></i>
+        <span>about Spinach</span>
+      <% end %>
+    </div>
+    <div class="selected footer-link">
+      <%= link_to publics_contact_path do %>
+        <i class="far fa-envelope"></i>
+        <span>contact</span>
+      <% end %>
+    </div>
   <% else %>
-      <%= link_to root_path, class: "about-link" do %>
-      <i class="far fa-question-circle"></i>
-      <span>about Spinach</span>
-    <% end %>
-    <p></p>
-    <%= link_to publics_contact_path, class: "selected-contact-link"  do %>
+    <div class="footer-link">
+      <%= link_to root_path do %>
+        <i class="far fa-question-circle"></i>
+        <span>about Spinach</span>
+      <% end %>
+    </div>
+    <div class="footer-link">
+     <%= link_to publics_contact_path do %>
       <i class="far fa-envelope"></i>
       <span>contact</span>
-    <% end %>
+     <% end %>
+    </div>
   <% end %>
 </div>
