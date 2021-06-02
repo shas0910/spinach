@@ -9,6 +9,7 @@ class User < ApplicationRecord
   has_many :contents
   has_many :reads
   has_many :comments
+  has_one_attached :avatar
 
   validates :user_name, presence: true
   validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i, message: 'Include both letters and numbers', allow_blank: true }
