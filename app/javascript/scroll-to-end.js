@@ -1,4 +1,6 @@
-$(document).on('turbolinks:load', function() {
+$(function(){
+
   let target = document.getElementById('scroll-inner');
   target.scrollIntoView(false);
+  
 });

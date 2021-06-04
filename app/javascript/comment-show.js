@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load', function() {
+$(function(){
 
   $('.comment-btn-group').on('click', function(){
     var i = $('.comment-btn-group').index(this);
@@ -8,4 +8,5 @@ $(document).on('turbolinks:load', function() {
       $('.comment-wrapper').eq(i).slideDown();
     }
   });
+
 });

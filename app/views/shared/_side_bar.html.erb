@@ -2,34 +2,30 @@
   <div class="side-bar-header">
     <%= link_to "#", class: "user-edit-link" do %>
       <% if current_user.avatar.attached? %>
-        <%= image_tag "default-avatar.png" %>
-        <span><%= current_user.user_name %></span>
+        <%= image_tag current_user.avatar %>
+        <%= current_user.user_name %>
       <% else %>
-        <%= image_tag "default-avatar.png", class: "avatar" %>
+        <%= image_tag "default-avatar.png" %>
         <%= current_user.user_name %>
       <% end %>
     <% end %>
+    <div class="log-out-link">
+      <%= link_to destroy_user_session_path, method: :delete do %>
+        <i class="fas fa-sign-out-alt"></i>
+      <% end %>
+    </div>
   </div>
-  <%# <div class="side-bar-header"> %>
-    <%# <div class="header-user"> %>
-      <%# <div class="user-avatar"> %>
-        <%# <i class="fas fa-user"></i> %>
-      <%# </div> %>
-      <%# <%= link_to current_user.user_name, "#", class: "header-user-name" %>
-    <%# </div> %>
-  <%# </div> %>
 <% else %>
   <div class="session-links">
-    <%= link_to "ログイン", new_user_session_path, class: "log-in-link" %>
-    <%= link_to "新規登録", new_user_registration_path, class: "sign-up-link" %>
+    <button type="button" id="sign-in-modal-open-btn">ログイン</button>
+    <button type="button" id="sign-up-modal-open-btn">新規登録</button>
   </div>
 <% end %>
-
 
 <div class="side-bar-main">
   <% if user_signed_in? %>
     <% current_user.rooms.each do |room| %>
-      <% if room.id == @room.id %>
+      <% if room.id == @current_room.id %>
         <div class="selected room">
           <div class="room-name">
             <%= link_to room_contents_path(room) do %>

@@ -1,0 +1,38 @@
+<div id="sign-up-modal-overlay">
+  <div id="sign-up-modal-window">
+    <div class="sign-up-modal-header">
+      <div class="sign-up-modal-title">
+        <%= image_tag "spinach-logo.png", class: "spinach-logo-image" %>
+        <h1>Spinachに新規登録</h1>
+      </div>
+    </div>
+    <button id="sign-up-modal-close-btn"><i class="fas fa-times"></i></button>
+    <%= form_with model: @user, url: user_registration_path, local: true do |f| %>
+      <div class="sign-up-email">
+        <%= f.label :email, "メールアドレス" %>
+        <%= f.email_field :email, class: "sign-up-email-form" %>
+      </div>
+      <div class="sign-up-password">
+        <%= f.label :password, "パスワード" %>
+        <%= f.password_field :password, class: "sign-up-password-form" %>
+      </div>
+      <div class="sign-up-password-confirmation">
+        <%= f.label :password_confirmation, "パスワード(確認)" %>
+        <%= f.password_field :password, class: "sign-up-password-confirmation-form" %>
+      </div>
+      <div class="sign-up-user-name">
+        <%= f.label :user_name, "ユーザー名" %>
+        <%= f.text_field :user_name, class: "sign-up-user-name-form" %>
+      </div>
+      <div class="sign-up-avatar">
+        <%= f.label :avatar, "ユーザー画像" %>
+        <%= f.file_field :avatar %>
+      </div>
+        <%= f.hidden_field :url, value: request.fullpath %>
+        <%= f.submit "新規登録", class: "sign-up-btn" %>
+        <div class="sign-up-to-sign-in">
+          <%# <button id="sign-up-to-sign-in-btn">ログインはこちら</button> %>
+        </div>
+      <% end %>
+  </div>
+</div>

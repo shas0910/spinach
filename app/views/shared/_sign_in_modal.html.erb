@@ -1,0 +1,26 @@
+<div id="sign-in-modal-overlay">
+  <div id="sign-in-modal-window">
+    <div class="sign-in-modal-header">
+      <div class="sign-in-modal-title">
+        <%= image_tag "spinach-logo.png", class: "spinach-logo-image" %>
+        <h1>Spinachにログイン</h1>
+      </div>
+    </div>
+    <button id="sign-in-modal-close-btn"><i class="fas fa-times"></i></button>
+    <%= form_with model: @user, url: user_session_path, local: true do |f| %>
+      <div class="sign-in-email">
+        <%= f.label :email, "メールアドレス" %>
+        <%= f.email_field :email, class: "sign-in-email-form" %>
+      </div>
+      <div class="sign-in-password">
+        <%= f.label :password, "パスワード" %>
+        <%= f.password_field :password, class: "sign-in-password-form" %>
+      </div>
+        <%= f.hidden_field :url, value: request.fullpath %>
+        <%= f.submit "ログイン", class: "sign-in-btn" %>
+        <div class="sign-in-to-sign-up">
+          <%# <button id="sign-in-to-sign-up-btn">新規登録はこちら</button> %>
+        </div>
+      <% end %>
+  </div>
+</div>

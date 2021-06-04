@@ -1,13 +1,6 @@
-/* .side-bar-header {
-  height: 70px;
-  padding: 0 20px; */
-  /* background-color: #FFF; */
-  /* display: flex; */
-  /* justify-content: space-between; */
-  /* align-items: center;
-  border-bottom: solid 1px rgb(200, 200, 200);
-  border-right: solid 1px rgb(200, 200, 200);
-} */
+.side-bar-header{
+  position: relative;
+}
 
 .user-edit-link {
   text-decoration: none;
@@ -16,8 +9,6 @@
   height: 70px;
   padding-left: 20px;
   padding-top: 20px;
-  /* background-color: #FFF; */
-  /* justify-content: space-between; */
   border-bottom: solid 1px rgb(200, 200, 200);
   border-right: solid 1px rgb(200, 200, 200);
 }
@@ -30,10 +21,6 @@
   vertical-align: middle;
 }
 
-.user-edit-link span {
-  vertical-align: middle;
-}
-
 .header-user-name {
   font-size: 16px;
   color: #5e6369;
@@ -43,11 +30,17 @@
   margin-left: 5px;
 }
 
-.log-out-link {
+.log-out-link a {
+  position: absolute;
+  right: 15px;
+  top: 11px;
   text-decoration: none;
   color: #5e6369;
   font-size: 14px;
-  display: block;
+  padding: 13.5px 17px;
+  border-radius: 50%;
+  background-color: #FFF;
+  border: solid 1px rgb(200, 200, 200);
 }
 
 .session-links {
@@ -55,6 +48,29 @@
   display: flex;
   border-bottom: solid 1px rgb(200, 200, 200);
   border-right: solid 1px rgb(200, 200, 200);
+}
+
+#sign-in-modal-open-btn {
+  background-color: white;
+  border: none;
+  padding: 0;
+  width: 50%;
+  margin: 0;
+  font: 14px "Hiragino Kaku Gothic ProN" ;
+  color: #5e6369;
+  cursor: pointer;
+}
+
+#sign-up-modal-open-btn {
+  background-color: white;
+  border: none;
+  padding: 0;
+  width: 50%;
+  margin: 0;
+  font: 14px "Hiragino Kaku Gothic ProN" ;
+  color: #5e6369;
+  cursor: pointer;
+  border-left: solid 1px rgb(200, 200, 200);
 }
 
 .log-in-link {

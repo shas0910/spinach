@@ -1,18 +1,18 @@
 class ContentsController < ApplicationController
   def index
-    @room = Room.find(params[:room_id])
+    @current_room = Room.find(params[:room_id])
     @content = Content.new
-    @contents = @room.contents.includes(:user)
+    @contents = @current_room.contents.includes(:user)
     @comment = Comment.new
   end
 
   def create
-    @room = Room.find(params[:room_id])
+    @current_room = Room.find(params[:room_id])
     @content = Content.new(content_params)
     if @content.save
-      redirect_to room_contents_path(@room)
+      redirect_to room_contents_path(@current_room)
     else
-      @contents = @room.contents.includes(:user)
+      @contents = @current_room.contents.includes(:user)
       render :index
     end
   end

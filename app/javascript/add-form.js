@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load', function() {
+$(function(){
 
   const btn_clone = $('.btn-clone');
   const btn_remove = $('.btn-remove');

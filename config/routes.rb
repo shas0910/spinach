@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: { sessions: 'users/sessions', registrations: 'users/registrations'}
   get "publics/about" => "publics#about"
   get "publics/contact" => "publics#contact"
   root to: "publics#about"
