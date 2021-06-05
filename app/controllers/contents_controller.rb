@@ -4,6 +4,7 @@ class ContentsController < ApplicationController
     @content = Content.new
     @contents = @current_room.contents.includes(:user)
     @comment = Comment.new
+    @room_user = RoomUser.where(user_id: current_user.id).where(room_id: params[:room_id])
   end
 
   def create

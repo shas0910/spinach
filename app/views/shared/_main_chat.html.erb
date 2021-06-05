@@ -6,7 +6,15 @@
   </div>
   <div class="right-header">
     <div class="header-button">
-      <%# <%= link_to "退出する", "#" %>
+      <% if @current_room.user_ids.count > 1 %>
+        <%= link_to room_room_user_path(params[:room_id], @room_user.ids), class: "room_user_destroy", method: :delete do %>
+          <i class="far fa-times-circle"></i>
+        <% end %>
+      <% else %>
+        <%= link_to room_path(params[:room_id]), class: "room_destroy", method: :delete do %>
+          <i class="far fa-times-circle"></i>
+        <% end %>
+      <% end %>
     </div>
   </div>
 </div>
