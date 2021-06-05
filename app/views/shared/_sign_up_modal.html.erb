@@ -9,19 +9,19 @@
     <button id="sign-up-modal-close-btn"><i class="fas fa-times"></i></button>
     <%= form_with model: @user, url: user_registration_path, local: true do |f| %>
       <div class="sign-up-email">
-        <%= f.label :email, "メールアドレス" %>
+        <%= f.label :email, "メールアドレス ※必須" %>
         <%= f.email_field :email, class: "sign-up-email-form" %>
       </div>
       <div class="sign-up-password">
-        <%= f.label :password, "パスワード" %>
+        <%= f.label :password, "パスワード ※必須" %>
         <%= f.password_field :password, class: "sign-up-password-form" %>
       </div>
       <div class="sign-up-password-confirmation">
-        <%= f.label :password_confirmation, "パスワード(確認)" %>
+        <%= f.label :password_confirmation, "パスワード(確認) ※必須" %>
         <%= f.password_field :password, class: "sign-up-password-confirmation-form" %>
       </div>
       <div class="sign-up-user-name">
-        <%= f.label :user_name, "ユーザー名" %>
+        <%= f.label :user_name, "ユーザー名 ※必須" %>
         <%= f.text_field :user_name, class: "sign-up-user-name-form" %>
       </div>
       <div class="sign-up-avatar">

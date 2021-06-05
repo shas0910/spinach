@@ -35,6 +35,7 @@
 
 .upper-message{
   display: flex;
+  margin-bottom: 10px;
 }
 
 .message-user {

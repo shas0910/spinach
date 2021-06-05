@@ -61,35 +61,35 @@
   </div>
 </div>
 
-    <div class="comment-wrapper">
-      <div class="comments">
-        <% content.comments.each do |c| %>
-          <div class="comment">
-            <div class="comment-left">
-              <div class="comment-user">
-                <%= c.user.user_name %>
-              </div>
-              <div class="comment-bottom">
-                <p class="comment-time">
-                  <span><%= l c.created_at %></span>
-                </p>
-                <div class="comment-text">
-                  <%= c.comment_text %>
-                </div>
-              </div>
-            </div>
-            <div class="comment-right">
-              <div class="user-avatar">
-                <i class="fas fa-user"></i>
-              </div>
+<div class="comment-wrapper">
+  <div class="comments">
+    <% content.comments.each do |c| %>
+      <div class="comment">
+        <div class="comment-left">
+          <div class="comment-user">
+            <%= c.user.user_name %>
+          </div>
+          <div class="comment-bottom">
+            <p class="comment-time">
+              <span><%= l c.created_at %></span>
+            </p>
+            <div class="comment-text">
+              <%= c.comment_text %>
             </div>
           </div>
-        <% end %>
+        </div>
+        <div class="comment-right">
+          <div class="user-avatar">
+            <i class="fas fa-user"></i>
+          </div>
+        </div>
       </div>
-      <%= form_with model: @comment, url: room_content_comments_path(params[:room_id], content.id), local: true, class: "comment-form-group" do |f| %>
-        <%= f.text_field :comment_text, class: "comment-form" %>
-        <%= f.button :type => "submit", style: 'border-style: none;', class: "comment-submit" do %>
-          <i class="fas fa-comment-dots"></i>
-        <% end %>
-      <% end %>
-    </div>
+    <% end %>
+  </div>
+  <%= form_with model: @comment, url: room_content_comments_path(params[:room_id], content.id), local: true, class: "comment-form-group" do |f| %>
+    <%= f.text_field :comment_text, class: "comment-form" %>
+    <%= f.button :type => "submit", style: 'border-style: none;', class: "comment-submit" do %>
+      <i class="fas fa-comment-dots"></i>
+    <% end %>
+  <% end %>
+</div>
