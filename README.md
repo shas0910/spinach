@@ -42,8 +42,9 @@ https://docs.google.com/spreadsheets/d/1NtJ-3_15_ml1d7xyTv-cNP6SNQ-l5TbhjsJWHJtE
 
 # 実装予定機能
 ユーザー情報編集機能  
-新規部屋作成モーダル化  
-コンタクトフォーム実装  
+新規部屋作成モーダル化 
+部屋編集・削除機能  
+コンタクトフォーム  
 既読非同期化  
 コメント非同期化  
 コンテンツ投稿非同期化  
