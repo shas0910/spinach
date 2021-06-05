@@ -48,6 +48,7 @@ https://docs.google.com/spreadsheets/d/1NtJ-3_15_ml1d7xyTv-cNP6SNQ-l5TbhjsJWHJtE
 コメント非同期化  
 コンテンツ投稿非同期化  
 ActionCableによるコンテンツのユーザー間非同期化  
+モデル単体テストコード、結合テストコード記述  
 <br>
 
 # データベース設計
