@@ -70,7 +70,6 @@
 | Column    | Type   | Options     |
 | --------- | ------ | ----------- |
 | room_name | string | null: false |
-| room_desc | text   | null: false |
 
 ### Association
 

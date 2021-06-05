@@ -4,7 +4,6 @@ class Room < ApplicationRecord
   has_many :contents
 
   validates :room_name, presence: true
-  validates :room_desc, presence: true
   validate :user_ids_duplicate
 
   def user_ids_duplicate
