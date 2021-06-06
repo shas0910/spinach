@@ -66,25 +66,6 @@
         <span>about Spinach</span>
       <% end %>
     </div>
-    <div class="footer-link">
-     <%= link_to publics_contact_path do %>
-      <i class="far fa-envelope"></i>
-      <span>contact</span>
-     <% end %>
-    </div>
-  <% elsif current_page?(publics_contact_path) %>
-    <div class="footer-link">
-      <%= link_to root_path do %>
-        <i class="far fa-question-circle"></i>
-        <span>about Spinach</span>
-      <% end %>
-    </div>
-    <div class="selected footer-link">
-      <%= link_to publics_contact_path do %>
-        <i class="far fa-envelope"></i>
-        <span>contact</span>
-      <% end %>
-    </div>
   <% else %>
     <div class="footer-link">
       <%= link_to root_path do %>
@@ -92,11 +73,11 @@
         <span>about Spinach</span>
       <% end %>
     </div>
-    <div class="footer-link">
-     <%= link_to publics_contact_path do %>
-      <i class="far fa-envelope"></i>
-      <span>contact</span>
-     <% end %>
-    </div>
   <% end %>
+  <div class="footer-link">
+    <%= link_to "#" do %>
+    <i class="far fa-envelope"></i>
+    <span>contact</span>
+    <% end %>
+  </div>
 </div>
