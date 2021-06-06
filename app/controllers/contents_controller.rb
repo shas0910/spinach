@@ -9,6 +9,7 @@ class ContentsController < ApplicationController
 
   def create
     @current_room = Room.find(params[:room_id])
+    @room_user = RoomUser.where(user_id: current_user.id).where(room_id: params[:room_id])
     @content = Content.new(content_params)
     if @content.save
       redirect_to room_contents_path(@current_room)
@@ -16,6 +17,12 @@ class ContentsController < ApplicationController
       @contents = @current_room.contents.includes(:user)
       render :index
     end
+  end
+
+  def destroy
+    content = Content.find(params[:id])
+    content.destroy
+    redirect_to room_contents_path(params[:room_id])
   end
 
   private

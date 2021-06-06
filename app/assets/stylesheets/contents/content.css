@@ -38,6 +38,15 @@
   margin-bottom: 10px;
 }
 
+.content-destroy {
+  text-decoration: none;
+  color: #434a54;
+  margin-right: 5px;
+  position: absolute;
+  right: 25px;
+  top: 25px;
+}
+
 .message-user {
   color: #434a54;
   font-size: 16px;
@@ -123,6 +132,14 @@
 
 .comment-bottom {
   display: flex;
+}
+
+.comment-destroy {
+  text-decoration: none;
+  color: #434a54;
+  font-size: 10px;
+  margin-right: 5px;
+  align-self: flex-end;
 }
 
 .comment-time {

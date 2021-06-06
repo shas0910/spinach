@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   root to: "publics#about"
   resources :rooms, only: [:index, :new, :create, :destroy] do
     resources :room_users, only: :destroy
-    resources :contents, only: [:index, :create] do
+    resources :contents, only: [:index, :create, :destroy] do
       resources :reads, only: [:create, :destroy]
       resources :comments, only: [:create, :destroy]
     end

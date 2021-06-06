@@ -25,9 +25,15 @@
       </div>
     </div>
 
-      <div class="message-content">
-        <%= safe_join(content.content_text.split("\n"),tag(:br)) %>
-      </div>
+    <% if content.user == current_user %>
+      <%= link_to room_content_path(params[:room_id], content.id), method: :delete, class: "content-destroy" do %>
+        <i class="fas fa-trash-alt"></i>
+      <% end %>
+    <% end %>
+
+    <div class="message-content">
+      <%= safe_join(content.content_text.split("\n"),tag(:br)) %>
+    </div>
 
     <div class="lower-message">
       <div class="message-date">
@@ -70,6 +76,11 @@
             <%= c.user.user_name %>
           </div>
           <div class="comment-bottom">
+            <% if c.user == current_user %>
+              <%= link_to room_content_comment_path(params[:room_id], content.id, c.id), method: :delete, class: "comment-destroy" do %>
+                <i class="fas fa-trash-alt"></i>
+              <% end %>
+            <% end %>
             <p class="comment-time">
               <span><%= l c.created_at %></span>
             </p>
